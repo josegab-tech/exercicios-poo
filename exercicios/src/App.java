@@ -1,22 +1,20 @@
 
-
 public class App {
     public static void main(String[] args) throws Exception {
-        
+
         Produto p1 = new Produto();
         Produto p2 = new Produto();
 
-         p1.setNome("Cobertor");
-         p1.setPreco(45);
-         p2.setNome("Ar-condicionado");
-         p2.setPreco(300);
+        p1.setNome("Cobertor");
+        p1.setNome("Camiseta"); // teste de troca de valores
+        p1.setPreco(45);
+        p2.setNome("Ar-condicionado");
+        p2.setPreco(300);
 
         System.out.println(p1.getNome() + " " + p1.getPreco());
         System.out.println(p2.getNome() + " " + p2.getPreco());
 
-
         System.out.println("\n Exercicio 2\n ");
-
 
         Aluno a1 = new Aluno();
         Aluno a2 = new Aluno();
@@ -32,5 +30,25 @@ public class App {
         System.out.println(a1.getNome() + " " + a1.getNota());
         System.out.println(a2.getNome() + " " + a2.getNota());
         System.out.println(a3.getNome() + " " + a3.getNota());
+
+        System.out.println("\nex10\n");
+
+
+        Animal[] animais = new Animal[2];
+        animais[0] = new Cachorro("dogmaul");
+        animais[1] = new Gato("Mauricio");
+
+        for(int i = 0; i<=1;i++){
+            System.out.println("Animal: "+animais[i].getNome()) ;
+            animais[i].emitirSom();
+        }
+
+        System.out.println("\nexercício 12\n");
+
+        
+
+
+
+
     }
 }

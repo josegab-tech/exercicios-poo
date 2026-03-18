@@ -26,11 +26,11 @@ public class Produto {
     }
 
     public Produto(String nome){
-
+        this.nome = nome;
     }
 
     public Produto(double preco){
-        
+        this.preco = preco;
     }
 
     public Produto(){

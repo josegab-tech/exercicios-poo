@@ -10,9 +10,11 @@ public class Pessoa{
     public void setIdade(int idade){
        if(idade > 100  ){
         System.out.println("idade maior do que 100");
+        this.idade = 0;
        } else if(idade < 0){
         System.out.println("Idade negativa... Não permitido");
-       }Else
+        this.idade = 0;
+       }else
         this.idade = idade;
     }
 
