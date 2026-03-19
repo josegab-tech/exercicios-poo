@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -33,22 +33,42 @@ public class App {
 
         System.out.println("\nex10\n");
 
-
         Animal[] animais = new Animal[2];
         animais[0] = new Cachorro("dogmaul");
         animais[1] = new Gato("Mauricio");
 
-        for(int i = 0; i<=1;i++){
-            System.out.println("Animal: "+animais[i].getNome()) ;
+        for (int i = 0; i <= 1; i++) {
+            System.out.println("Animal: " + animais[i].getNome());
             animais[i].emitirSom();
         }
 
         System.out.println("\nexercício 12\n");
 
-        
+        int opcao;
+        int a,b,c;
+        Scanner scanner = new Scanner(System.in);
+        Calculadora calculadora = new Calculadora();
+        do{
+            System.out.println("Somar dois inteiros;");
+            System.out.println("Somar três inteiros;");
+            System.out.println("Multiplicar dois números;");
+            System.out.println("Dividir dois números");
+
+            switch(opcao){
+
+                case 1:
+                System.out.println("Digite os dois números");
+                int a = scanner.nextInt();
+
+            }
 
 
 
+            opcao = scanner.nextInt();
+            while(opcao != 0);
+
+            scanner. close();
+        }
 
     }
 }

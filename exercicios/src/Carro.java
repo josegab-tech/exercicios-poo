@@ -1,33 +1,30 @@
-public class Carro{
+public class Carro {
 
-private String marca;
-private int ano;
+    private String marca;
+    private int ano;
 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-public void setMarca(String marca){
-    this.marca = marca;
-}
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
 
-public void setAno(int ano){
-    this.ano = ano;
-}
+    public String getMarca() {
+        return this.marca;
+    }
 
-public String getMarca(){
-    return this.marca;
-}
+    public int getAno() {
+        return this.ano;
+    }
 
-public int getAno(){
-    return this.ano;
-}
+    public Carro() {
 
-public Carro(){
+    }
 
-}
+    public Carro(String marca, int ano) {
 
-public Carro(String marca, int ano){
-
-}
-
-
+    }
 
 }

@@ -1,32 +1,26 @@
-public class Aluno{
+public class Aluno {
 
      String nome;
      double nota;
 
-     public void setNome(String nome){
+     public void setNome(String nome) {
           this.nome = nome;
      }
 
-     public void setNota(double nota){
+     public void setNota(double nota) {
           this.nota = nota;
      }
-  
-    public String getNome(){
-     return this.nome;
-    } 
 
-    public double getNota(){
-     return this.nota;
-    }
+     public String getNome() {
+          return this.nome;
+     }
 
-    public Aluno(){
+     public double getNota() {
+          return this.nota;
+     }
 
-    }
-    
+     public Aluno() {
 
-
-
-
-
+     }
 
 }
