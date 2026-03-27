@@ -1,10 +1,14 @@
 public class Calculadora {
 
-    public int soma(int a, in b) {
-        return soma = a + b;
+    public int soma(int a, int b) {
+        return a + b;
     }
 
     public int soma(int a, int b, int c) {
+        return  a + b + c;
+    }
+    
+    public double soma(double a, double b, double c) {
         return  a + b + c;
     }
 
@@ -32,7 +36,7 @@ public class Calculadora {
         if ( b == 0) {
             System.out.println("Divisão inválida!");
         }  
-           return a / b;
+        return a / b;
         }
         
 
@@ -40,7 +44,7 @@ public class Calculadora {
         if ( b == 0) {
             System.out.println("Divisão inválida!");
         }  
-           return a / b;
+        return a / b;
         
     }
 }

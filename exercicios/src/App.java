@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -42,24 +43,60 @@ public class App {
             animais[i].emitirSom();
         }
 
+
+
+
         System.out.println("\nexercício 12\n");
 
         int opcao;
-        int a,b,c;
+        double a,b,c;
+
         Scanner scanner = new Scanner(System.in);
         Calculadora calculadora = new Calculadora();
+
         do{
-            System.out.println("Somar dois inteiros;");
-            System.out.println("Somar três inteiros;");
-            System.out.println("Multiplicar dois números;");
-            System.out.println("Dividir dois números");
+            System.out.println("1. Somar dois inteiros");
+            System.out.println("2. Somar três inteiros");
+            System.out.println("3. Somar dois decimais");
+            System.out.println("4. Subtrair dois números");
+            System.out.println("5. Multiplicar dois números");
+            System.out.println("6. Dividir dois números");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+
+            opcao = scanner.nextInt();
+
 
             switch(opcao){
 
                 case 1:
-                System.out.println("Digite os dois números");
-                int a = scanner.nextInt();
+                System.out.println("Digite o primeiro número: ");
+                a = scanner.nextInt();
+                System.out.println("Digite o segundo número: ");
+                b = scanner.nextInt();
+                System.out.println("Resultado:" + calculadora.soma((int)a,(int)b));
+                break;
 
+                case2:
+                System.out.println("Somar 3 inteiros");
+                System.out.println("Digite o primeiro número: ");
+                a = scanner.nextInt();
+                System.out.println("Digite o  segundo número: ");
+                b = scanner.nextInt();
+                System.out.println("Digite o  terceiro número: ");
+                c = scanner.nextInt();
+
+                System.out.println("Resultado: " + calculadora.soma((int)a, (int)b, (int)c));
+                break;
+
+                case 3:
+                System.out.println("Somar dois decimais");
+                System.out.println("Digite o primeiro valor: ");
+                a = scanner.nextDouble();
+                System.out.println("Digite o segundo valor: ");
+                b = scanner.nextDouble();
+                System.out.println("Resultado: "+ calculadora.soma(a + b));
+                break;
             }
 
 
