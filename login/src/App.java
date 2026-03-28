@@ -5,7 +5,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
-        String nomeUsuario, senhaUsuario, lognome, logsenha;
+        String nomeUsuario, senhaUsuario, logNome, logSenha;
 
         System.out.println("Cadastre um nome de usuário");
         nomeUsuario = scanner.nextLine();
@@ -15,22 +15,21 @@ public class App {
 
         do {
             System.out.println("Digite o nome de usuário: ");
-            lognome = scanner.nextLine();
-            if (nomeUsuario != lognome) {
-                System.out.println("Nome de usuário incorreto!");
-                break;
-            } else if (nomeUsuario == lognome) {
-                System.out.println("Senha: ");
-                logsenha = scanner.nextLine();
-                if (senhaUsuario != logsenha) {
-                    System.out.println("Senha incorreta!!");
-                    break;
-                }
-            }else{
-                System.out.println("Iniciando sessão");
-            }
+            logNome = scanner.nextLine();
+            System.out.println("Senha: ");
+            logSenha = scanner.nextLine();
 
-        } while (nomeUsuario == lognome && senhaUsuario == logsenha);
+            if(!nomeUsuario.equals(logNome)){
+                System.out.println("Nome de usuário incorreto!!");
+            }else if(!senhaUsuario.equals(logSenha)){
+                System.out.println("Senha incorreta!!");
+            }else{
+                System.out.println("Iniciando a sessão");
+                break;
+            }
+            
+
+        } while (true);
 
         scanner.close();
     }
