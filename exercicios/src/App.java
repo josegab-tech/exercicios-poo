@@ -77,7 +77,7 @@ public class App {
                 System.out.println("Resultado:" + calculadora.soma((int)a,(int)b));
                 break;
 
-                case2:
+                case 2:
                 System.out.println("Somar 3 inteiros");
                 System.out.println("Digite o primeiro número: ");
                 a = scanner.nextInt();
@@ -93,19 +93,16 @@ public class App {
                 System.out.println("Somar dois decimais");
                 System.out.println("Digite o primeiro valor: ");
                 a = scanner.nextDouble();
+
                 System.out.println("Digite o segundo valor: ");
                 b = scanner.nextDouble();
-                System.out.println("Resultado: "+ calculadora.soma(a + b));
+
+                System.out.println("Resultado: "+ calculadora.soma(a, b));
                 break;
             }
-
-
-
-            opcao = scanner.nextInt();
-            while(opcao != 0);
-
-            scanner. close();
+        }while(opcao != 0);
+             scanner. close();
+        
+        
         }
-
-    }
 }
