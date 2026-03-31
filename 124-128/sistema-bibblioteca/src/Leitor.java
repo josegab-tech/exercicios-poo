@@ -16,4 +16,8 @@ public class Leitor extends Pessoa{
         this.matricula = matricula;
     }
 
+    @Override
+    public String toString(){
+        return "Leitor: "+ getNome() + "\nMatricula: "+ matricula;
+    }
 }

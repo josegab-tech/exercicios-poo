@@ -1,41 +1,70 @@
 import java.time.LocalDate;
 
-public class Emprestimo{
-
-
+public class Emprestimo {
     private Livro livro;
     private Leitor leitor;
-    private localDate dataEmprestimo;
-    private localDate dataEvolucao;
+    private LocalDate dataEmprestimo;
+    private LocalDate dataDevolucaoPrevista;
+    private LocalDate dataDevolucaoReal;
+    private boolean ativo;
 
-    public void setLivro(Livro livro){
-        this.livro= livro;
+    public void setLivro(Livro livro) {
+        this.livro = livro;
     }
 
-    public void setLeitor(Leitor leitor){
+    public void setLeitor(Leitor leitor) {
         this.leitor = leitor;
     }
 
-    public Livro getLivro(){
+    public Livro getLivro() {
         return this.livro;
     }
 
-    public Leitor getLeitor(){
+    public Leitor getLeitor() {
         return this.leitor;
     }
 
-    public LocalDate dataEmprestimo(){
-        return this.dataEmprestimo();
+    // CORRIGIDOS: Getters sem recursão
+    public LocalDate getDataEmprestimo() {
+        return this.dataEmprestimo;
     }
 
-    public LocalDate dataDevolucao(){
-        return this.dataDevolucao();
+    public LocalDate getDataDevolucaoPrevista() {
+        return this.dataDevolucaoPrevista;
     }
 
-    public Emprestimo(Livro livro, Leitor leitor){
+    public LocalDate getDataDevolucaoReal() {
+        return this.dataDevolucaoReal;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public Emprestimo(Livro livro, Leitor leitor) {
         this.livro = livro;
         this.leitor = leitor;
         this.dataEmprestimo = LocalDate.now();
-        this.dataDevolucao = dataEmprestimo.plusDays(7);
+        this.dataDevolucaoPrevista = dataEmprestimo.plusDays(7);
+        this.ativo = true;
+        this.livro.setDisponivel(false);
+    }
+
+    public void devolver() {
+        if (ativo) {
+            this.dataDevolucaoReal = LocalDate.now();
+            this.ativo = false;
+            this.livro.devolver();
+            System.out.println("Empréstimo finalizado!");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Livro: " + livro.getTitulo() +
+                "\nLeitor: " + leitor.getNome() +
+                "\nData Empréstimo: " + dataEmprestimo +
+                "\nDevolução Prevista: " + dataDevolucaoPrevista +
+                "\nStatus: " + (ativo ? "ATIVO" : "FINALIZADO");
     }
 }

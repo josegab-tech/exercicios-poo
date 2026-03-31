@@ -16,5 +16,10 @@ public class Autor extends Pessoa {
     public String getBiografia(){
         return this.biografia;
     }
+
+    @Override
+    public String toString(){
+        return "Autor: "+getNome()+"\nBiografia: "+biografia;
+    }
     
 }

@@ -23,8 +23,13 @@ public abstract class Pessoa{
 
     }
 
-    public Pessoa(String nome, Sring email){
+    public Pessoa(String nome, String email){
         this.nome = nome;
         this.email=email;
+    }
+
+    @Override
+    public String toString(){
+        return "Nome: "+nome+"\nEmail: "+email;
     }
 }
