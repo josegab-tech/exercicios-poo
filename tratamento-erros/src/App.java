@@ -1,19 +1,20 @@
+import exceptions.ContaInativaException;
+import exceptions.SaldoInsuficienteException;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        int a = 10;
-        int b = 0;
-
-
-
+        ContaBancaria conta1 = new ContaBancaria(1,"José");
+        conta1.depositar(-100);
+        conta1.setAtiva(false);
         try{
-            int resultado = a/b;
-            System.out.println("Resultado: "+resultado);
-        }catch(ArithmeticException e){
-            System.out.println("Erro: Divisão por zero não permitida");
-            System.out.println("JVM: " + e.getMessage());
-        }finally{
-            System.out.println("Bloco executa automaticamente");
+            conta1.sacar(100);
+        }catch(SaldoInsuficienteException e){
+            System.out.println("Erro: "+ e.getMessage());
+        }catch(ContaInativaException e){
+            System.out.println(("Erro: " + e.getMessage()));
         }
-        System.out.println("Rodandoo...");
+
+    
+        
     }
 }
