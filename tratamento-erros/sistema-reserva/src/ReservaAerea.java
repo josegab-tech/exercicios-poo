@@ -1,3 +1,12 @@
+import exception.CpfInvalidoException;
+import exception.IdadeMaximaException;
+import exception.IdadeMinimaException;
+import exception.LimiteReservasException;
+import exception.SaldoInsuficienteException;
+import exception.SemAssentoException;
+import exception.SemVistoException;
+import exception.ValorInvalidoException;
+
 public class ReservaAerea {
 
     private String numeroVoo;
@@ -85,27 +94,51 @@ public class ReservaAerea {
         this.saldoCliente = saldoCliente;
     }
 
-    public void reservar(){
-        if(idadePassageiro < 18){
-            System.out.println("Erro_IDADE_MINIMA");
+    public void reservar(int quantidade) throws CpfInvalidoException, IdadeMaximaException, IdadeMinimaException, LimiteReservasException, SaldoInsuficienteException, SemAssentoException, SemVistoException, ValorInvalidoException {
+
+        if(this.idadePassageiro < 18){
+            throw new IdadeMinimaException(
+                "A idade mínima é de 18 anos."
+            );
         }
-        if(idadePassageiro>100){
-            System.out.println("ERRO_IDADE_MAXIMA");
+        if(this.idadePassageiro > 100){
+            throw new IdadeMaximaException(
+                "Limite de idade alcançado."
+            );
         }
-        if(assentosDisponiveis == 0){
-            System.out.println("ERRO_SEM_ASSCENTO");
+        if(this.assentosDisponiveis == 0){
+            throw new SemAssentoException(
+                "O voo ja está lotado."
+            );
         }
-        if(saldoCliente < valorPassagem){
-            System.out.println("ERRO_SALDO_INSUFICIENTE");
+        if(this.valorPassagem > this.saldoCliente){
+            throw new SaldoInsuficienteException(
+                "Saldo insuficiente."
+            );
         }
-        if(vooInternacional == true && passageiroPossuiVisto == false){
-            System.out.println("ERRO_SEM_VISTO");
+        if(this.vooInternacional == true && this.passageiroPossuiVisto == false){
+            throw new SemVistoException(
+                "O passageiro não possui um visto."
+            );
         }
-        if(cpfPassageiro.length() < 10 ){
-            System.out.println("ERRO_CPF_INVALIDO");
+        if(this.cpfPassageiro.length() < 11 || !this.cpfPassageiro.matches("\\d+")){
+            throw new CpfInvalidoException(
+                "CPF inválido."
+            );
         }
-        if(valorPassagem <=0){
-            System.out.println("VALOR INVALIDO");
+        if(this.valorPassagem <= 0){
+            throw new ValorInvalidoException(
+                "O valor da passagem deve ser maior do que 0"
+            );
         }
+        if(quantidade > 3){
+            throw new LimiteReservasException(
+                "Limite de reservas alcançado, só é possivel 3 por CPF"
+            );
+        }
+
+        this.assentosDisponiveis--;
+        quantidade ++;
+
     }
 }
