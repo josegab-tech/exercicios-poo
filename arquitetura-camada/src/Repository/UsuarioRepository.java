@@ -1,5 +1,9 @@
 // Persistêcia - só salva e busca
+package Repository;
+
 import Model.Usuario;
+import java.util.List;
+import java.util.ArrayList;
 
 public class UsuarioRepository{
     private static List<Usuario> banco = new ArrayList<>();

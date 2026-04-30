@@ -1,5 +1,11 @@
 // Apenas dados, sem lógica
+package View;
 
+import java.util.List;
+import Model.Usuario;
+import Controller.UsuarioController;
+import java.util.ArrayList;
+import Service.UsuarioService;
 
 public class UsuarioView{
     public void exibirMensagem(String msg){

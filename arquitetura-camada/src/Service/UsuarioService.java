@@ -1,5 +1,9 @@
+package Service;
+
 import Repository.UsuarioRepository;
 import Model.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioService{
     private UsuarioRepository repository;
