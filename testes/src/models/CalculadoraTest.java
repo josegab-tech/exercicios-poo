@@ -55,3 +55,7 @@ public class CalculadoraTest {
         assertEquals(-5,resultado);
     }
 }
+
+// java -cp "lib\junit-platform-console-standalone-1.13.0-M3.jar;." org.junit.platform.console.ConsoleLauncher --class-path . --scan-class-path
+
+//javac -d . -cp "lib\junit-platform-console-standalone-1.13.0-M3.jar" src\models\Calculadora.java src\models\CalculadoraTest.java
