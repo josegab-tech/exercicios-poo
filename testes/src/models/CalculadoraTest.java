@@ -54,6 +54,12 @@ public class CalculadoraTest {
         int resultado = calc.somar(-10,5);
         assertEquals(-5,resultado);
     }
+
+    @Test
+    void testSomaNegativos(){
+        int resultado = calc.somar(-5, -10);
+        assertEquals(-15,resultado);
+    }
 }
 
 // java -cp "lib\junit-platform-console-standalone-1.13.0-M3.jar;." org.junit.platform.console.ConsoleLauncher --class-path . --scan-class-path
