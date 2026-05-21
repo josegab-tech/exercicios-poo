@@ -48,4 +48,10 @@ public class CalculadoraTest {
         int resultado = calc.multiplicar(5, 15);
         assertEquals(75, resultado, "A multiplicação de 5 * 15 deveria ser 75");
     }
+
+    @Test
+    void testSomaNegativo(){
+        int resultado = calc.somar(-10,5);
+        assertEquals(-5,resultado);
+    }
 }
