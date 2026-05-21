@@ -21,6 +21,29 @@ public class CalculadoraTest {
     }
 
     @Test
+    void testSubtracaoNegativo(){
+        int resultado = calc.subtrair(2, 5);
+        assertEquals(-3, resultado);
+    }
+
+    @Test
+    void testMultplicacaoNegativo(){
+        int resultado = calc.multiplicar(0, 10);
+        assertEquals(0, resultado);
+    }
+
+    @Test
+    void testDivisaoExata(){
+        int resultado = calc.dividir(10, 2);
+        assertEquals(5.0, resultado);
+    }
+
+    @Test
+    void testDivisaoPorZero(){
+        assertThrows(IllegalArgumentException.class , ()-> calc.dividir(10,2));
+    }
+
+    @Test
     void testMult(){
         int resultado = calc.multiplicar(5, 15);
         assertEquals(75, resultado, "A multiplicação de 5 * 15 deveria ser 75");
